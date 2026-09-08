@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+
+/**
+ *
+ * @author antoi
+ */
+public class Chapter10_E3_Card {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        String name ="";
+        int age =0;
+        
+        recall printCard(String inName, int inAge);
+            
+        
+    }
+    
+    public static void printCard(String inName, int inAge) { 
+    
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n" +
+        "HAPPY BIRTHDAY! \n" +
+        "Dear " + name +" \n" +
+        "Congratulations on turning" + age + "! \n" +
+        "Here is a star for each year! \n");
+        for (int age = 0; age < 10; age++) {
+          
+            System.out.print("");
+            
+        }
+        
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ");
+    
+    }
+    
+    
+    
+}
