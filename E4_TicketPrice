@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class E4_TicketPrice {
+
+    // Method to calculate the ticket price based on age
+    public static double calculateTicketPrice(int inAge) {
+        if (inAge <= 18) {
+            return 100.00;
+        } else if (inAge <= 22) {
+            return 200.00;
+        } else {
+            return 300.00;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        // Ask the user how many tickets they want
+        System.out.print("How many tickets do you want to purchase? ");
+        int numberOfTickets = input.nextInt();
+
+        double totalPrice = 0.0;
+
+        // Generate information for each ticket
+        for (int ticket = 1; ticket <= numberOfTickets; ticket++) {
+
+            // Generate a random age between 15 and 35
+            int age = (int) (Math.random() * 21) + 15;
+
+            // Calculate ticket price using the method
+            double price = calculateTicketPrice(age);
+
+            // Add price to total
+            totalPrice += price;
+
+            // Display ticket information
+            System.out.println("Ticket " + ticket + ": Age " + age + ": R" + price);
+        }
+
+        System.out.println("------------------------------------");
+        System.out.println("Ticket Total: R" + totalPrice);
+
+        input.close();
+    }
+}
