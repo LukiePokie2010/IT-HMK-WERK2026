@@ -1,0 +1,79 @@
+package Model;
+
+public class Athlete {
+
+    private String name;
+    private String surname;
+    private int age;
+    private char gender;
+    private boolean tshirt;
+    private String tshirtSize;
+    private double paymentAmount;
+
+    private final int REGFEE = 250;
+    private final int TSHIRT = 100;
+
+    // Constructor
+    public Athlete(String name, String surname, int age, char gender,
+                   boolean tshirt, String tshirtSize) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.gender = gender;
+        this.tshirt = tshirt;
+        this.tshirtSize = tshirtSize;
+
+        calculatePayment();
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    // Setter
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Calculate payment
+    private void calculatePayment() {
+        paymentAmount = REGFEE;
+
+        if (tshirt) {
+            paymentAmount += TSHIRT;
+        }
+    }
+
+    // Display athlete information
+    @Override
+    public String toString() {
+        String output = "Athlete Information\n";
+        output += "-----------------------------\n";
+        output += "Name: " + name + " " + surname + "\n";
+        output += "Age: " + age + "\n";
+
+        if (gender == 'M') {
+            output += "Gender: Male\n";
+        } else {
+            output += "Gender: Female\n";
+        }
+
+        output += "PAYMENT:\n";
+        output += "Registration Fee: R" + REGFEE + "\n";
+
+        if (tshirt) {
+            output += "T-Shirt: R" + TSHIRT + "\n";
+            output += "T-Shirt Size: " + tshirtSize + "\n";
+        }
+
+        output += "--------------------------------------\n";
+        output += "Total: R" + paymentAmount + "\n";
+
+        return output;
+    }
+}
