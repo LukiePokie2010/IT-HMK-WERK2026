@@ -1,0 +1,41 @@
+```java
+import java.util.Scanner;
+
+public class E5_Satellite {
+
+    // Method 1: Convert miles to kilometres
+    public static double convertToKm(double miles) {
+        return miles * 1.60934;
+    }
+
+    // Method 2: Determine satellite battery status
+    public static String determineStatus(double batteryPercentage) {
+        if (batteryPercentage <= 20) {
+            return "CRITICAL LOW";
+        } else {
+            return "OPERATIONAL";
+        }
+    }
+
+    // Method 3: Print the satellite report
+    public static void printSatelliteReport(String name, double kms, String status) {
+        System.out.println("GROUND CONTROL REPORT");
+        System.out.println("=======================");
+        System.out.println("Satellite ID:\t" + name);
+        System.out.println("Orbit Altitude:\t" + kms + " km");
+        System.out.println("Battery Level:\t" + status);
+        System.out.println("=======================");
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Name: ");
+        String name = input.nextLine();
+
+        System.out.print("Miles: ");
+        double miles = input.nextDouble();
+
+        System.out.print("Battery
+```
