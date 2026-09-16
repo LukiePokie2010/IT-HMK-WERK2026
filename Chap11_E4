@@ -1,0 +1,32 @@
+public class E4_SolarPower {
+
+    public static void main(String[] args) {
+
+        int batteryLevel = 100;
+        int minuteCounter = 0;
+
+        System.out.println("SATELLITE ECLIPSE SIMULATION STARTED...");
+        System.out.println("Min\tPower\tBattery%");
+
+        while (batteryLevel > 0) {
+
+            minuteCounter++;
+
+            // Generate random power drain between 5 and 15
+            int powerDrain = (int) (Math.random() * 11 + 5);
+
+            // Subtract power drain from battery
+            batteryLevel -= powerDrain;
+
+            // Prevent battery from displaying a negative percentage
+            int displayBattery = Math.max(batteryLevel, 0);
+
+            System.out.println(minuteCounter + "\t"
+                    + powerDrain + "\t"
+                    + displayBattery);
+        }
+
+        System.out.println("SIMULATION ENDED: Satellite survived for "
+                + minuteCounter + " minutes before blackout.");
+    }
+}
