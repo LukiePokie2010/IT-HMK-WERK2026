@@ -1,0 +1,44 @@
+import java.util.Random;
+
+public class E1_ShoppingBudget {
+
+    public static final double BUDGET = 1000.00;
+
+    public static void main(String[] args) {
+
+        Random random = new Random();
+
+        double totalSpent = 0.00;
+        int itemCount = 0;
+
+        System.out.println("Shopping Spree");
+        System.out.println("--------------");
+
+        while (true) {
+
+            // Generate a random price between R20 and R50
+            double price = 20 + random.nextDouble() * 30;
+
+            // Stop if buying the item would exceed the budget
+            if (totalSpent + price > BUDGET) {
+                break;
+            }
+
+            itemCount++;
+            totalSpent += price;
+
+            System.out.printf("Product %d: R%.2f%n", itemCount, price);
+        }
+
+        double averagePrice = totalSpent / itemCount;
+        double change = BUDGET - totalSpent;
+
+        System.out.println("\nShopping Summary");
+        System.out.println("----------------");
+
+        System.out.printf("Total spent: R%.2f%n", totalSpent);
+        System.out.printf("Average price: R%.2f%n", averagePrice);
+        System.out.printf("Change: R%.2f%n", change);
+        System.out.println("Number of items: " + itemCount);
+    }
+}
