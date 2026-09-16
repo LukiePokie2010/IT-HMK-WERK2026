@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class E2_NumberGuessingGame {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        // Generate random number between 20 and 30
+        int number = (int) (Math.random() * 11 + 20);
+
+        int guess;
+        int tries = 0;
+
+        do {
+            System.out.print("Enter your guess (20-30) or -1 to quit: ");
+            guess = input.nextInt();
+
+            if (guess == -1) {
+                System.out.println("QUIT! Number of tries: " + tries);
+                System.out.println("The correct number is: " + number);
+            } else {
+                tries++;
+
+                if (guess == number) {
+                    System.out.println("MATCH! Number " + number
+                            + ". Number of tries: " + tries);
+                } else {
+                    System.out.println("Wrong! Try " + tries + ": " + guess);
+                }
+            }
+
+        } while (guess != number && guess != -1);
+
+        input.close();
+    }
+}
