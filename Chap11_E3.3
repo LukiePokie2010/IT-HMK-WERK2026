@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class E3_PinVerify {
+
+    public static final String CORRECT_PIN = "1234";
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String enteredPin;
+        int attempts = 0;
+
+        do {
+            System.out.print("Enter your PIN: ");
+            enteredPin = input.nextLine();
+            attempts++;
+
+        } while (!enteredPin.equals(CORRECT_PIN));
+
+        System.out.println("Access Granted! Account unlocked successfully.");
+        System.out.println("Total attempts made: " + attempts);
+
+        input.close();
+    }
+}
