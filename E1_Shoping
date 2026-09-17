@@ -1,0 +1,28 @@
+public class E1_ShoppingBudget {
+
+    public static void main(String[] args) {
+
+        double BUDGET = 1000;
+        double total = 0;
+        int counter = 0;
+
+        double price = (int)(Math.random() * 31) + 20;
+
+        while (total + price <= BUDGET) {
+
+            counter++;
+            total = total + price;
+
+            System.out.printf("Product %d: R%.2f%n", counter, price);
+
+            price = (int)(Math.random() * 31) + 20;
+        }
+
+        double average = total / counter;
+        double change = BUDGET - total;
+
+        System.out.printf("Total: R%.2f%n",        total);
+        System.out.printf("Average: R%.2f%n", average);
+        System.out.printf("Change: R%.2f%n", change);
+    }
+}
