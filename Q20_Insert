@@ -1,0 +1,2 @@
+INSERT INTO Students (FirstName, LastName, Email, DOB, Address, PaidAmount, Grade, ShirtSize, AveMark)
+VALUES ("Verne", "Basson", "verneb@gmail.com", #2009-07-29#, "29 Bubbles Street", 500, 10, "Medium", 88);
